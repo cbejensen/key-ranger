@@ -1,4 +1,6 @@
 import React from 'react';
+import glamorous from 'glamorous';
+import FontAwesome from 'react-fontawesome';
 
 export default function CircleButton(props) {
   const sizes = {
@@ -7,19 +9,31 @@ export default function CircleButton(props) {
     lg: '80'
   };
   function getSize() {
-    return sizes[props.size] || (props.size || '54');
+    return sizes[props.size] || (props.size || '60');
   }
-  const styles = {
-    btn: {
+  const CircleButton = glamorous.div(
+    {
       position: 'relative',
-      color: '#fff',
-      border: '2px solid #fff',
+      color: '#ffffff',
+      border: '1px solid #ffffff',
       borderRadius: '100%',
       background: 'transparent',
       width: getSize(),
-      height: getSize()
+      height: getSize(),
+      transition:
+        '.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+      ':hover': {
+        backgroundColor: '#000000',
+        borderColor: '#000000',
+        color: '#ffffff',
+        cursor: 'pointer',
+        transform: 'scale(1.1)'
+      }
     },
-    content: {
+    props.style
+  );
+  const styles = {
+    centered: {
       position: 'absolute',
       top: '50%',
       left: '50%',
@@ -27,8 +41,16 @@ export default function CircleButton(props) {
     }
   };
   return (
-    <div style={{ ...styles.btn, ...props.style }}>
-      <span style={styles.content}>{props.children}</span>
-    </div>
+    <CircleButton>
+      <span style={styles.centered}>
+        {props.icon
+          ? <FontAwesome
+              name={props.icon}
+              style={styles.icon}
+              flip={props.flip}
+            />
+          : props.children}
+      </span>
+    </CircleButton>
   );
 }

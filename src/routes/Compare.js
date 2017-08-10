@@ -5,10 +5,11 @@ export default function Compare(props) {
   const styles = {
     container: {
       background: '#f1635a',
-      height: '100vh'
+      height: '100vh',
+      minHeight: '400'
     },
     content: {
-      height: '100vh',
+      height: '100%',
       maxWidth: '900',
       margin: 'auto'
     }

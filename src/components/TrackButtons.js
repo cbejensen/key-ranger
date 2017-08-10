@@ -9,8 +9,7 @@ export default function TrackButtons(props) {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      position: 'relative',
-      paddingTop: '5px'
+      position: 'relative'
     },
     bigBtn: {
       position: 'absolute',
@@ -32,7 +31,12 @@ export default function TrackButtons(props) {
           ...styles.bigBtn.leftOne
         }}
       >
-        <CircleButton size="lg">^</CircleButton>
+        <CircleButton
+          icon="thumbs-up"
+          size="lg"
+          style={{ fontSize: '2em' }}
+          flip="horizontal"
+        />
       </div>
       <div
         style={{
@@ -40,7 +44,11 @@ export default function TrackButtons(props) {
           ...styles.bigBtn.rightOne
         }}
       >
-        <CircleButton size="lg">^</CircleButton>
+        <CircleButton
+          icon="thumbs-up"
+          size="lg"
+          style={{ fontSize: '2em' }}
+        />
       </div>
       <CenterButtons />
     </div>

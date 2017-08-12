@@ -10,7 +10,7 @@ export default function CompareContainer(props) {
       flexDirection: 'column'
     },
     section: {
-      flex: '1'
+      flex: '1 0 auto'
     }
   };
   return (

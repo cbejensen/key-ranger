@@ -1,27 +1,28 @@
 import React from 'react';
+import glamorous from 'glamorous';
 import TrackBox from './TrackBox';
 
-export default function TrackComparison(props) {
-  const styles = {
-    container: {
-      flex: '1',
-      display: 'flex',
-      alignItems: 'center',
-      paddingTop: '15px'
+export default function TrackBoxes(props) {
+  const Boxes = glamorous.div(
+    {
+      display: 'flex'
     },
-    box: {
-      height: '100%',
-      withBorder: {
-        borderRight: '1px solid #fff'
-      }
-    }
+    props.style
+  );
+  const box = {
+    paddingTop: '15px',
+    flex: '1'
   };
   return (
-    <div style={styles.container}>
+    <Boxes>
       <TrackBox
-        style={{ ...styles.box, ...styles.box.withBorder }}
+        num={1}
+        css={{
+          ...box,
+          borderRight: '1px solid white'
+        }}
       />
-      <TrackBox style={styles.box} />
-    </div>
+      <TrackBox num={2} css={box} />
+    </Boxes>
   );
 }

@@ -1,56 +1,41 @@
 import React from 'react';
+import glamorous from 'glamorous';
 import CircleButton from 'components/CircleButton';
 import CenterButtons from 'components/CenterButtons';
 
 export default function TrackButtons(props) {
-  const styles = {
-    container: {
-      flex: '1',
+  const Container = glamorous.div(
+    {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       position: 'relative'
     },
-    bigBtn: {
+    props.style
+  );
+  const Button = glamorous.div(
+    {
       position: 'absolute',
       top: '50%',
-      transform: 'translate(-50%, -50%)',
-      leftOne: {
-        left: '25%'
-      },
-      rightOne: {
-        left: '75%'
-      }
-    }
-  };
+      transform: 'translate(-50%, -50%)'
+    },
+    ({ left = '50%' }) => ({
+      left: left
+    })
+  );
   return (
-    <div style={styles.container}>
-      <div
-        style={{
-          ...styles.bigBtn,
-          ...styles.bigBtn.leftOne
-        }}
-      >
+    <Container>
+      <Button left="25%">
         <CircleButton
           icon="thumbs-up"
-          size="lg"
-          style={{ fontSize: '2em' }}
+          size="80"
           flip="horizontal"
         />
-      </div>
-      <div
-        style={{
-          ...styles.bigBtn,
-          ...styles.bigBtn.rightOne
-        }}
-      >
-        <CircleButton
-          icon="thumbs-up"
-          size="lg"
-          style={{ fontSize: '2em' }}
-        />
-      </div>
+      </Button>
+      <Button left="75%">
+        <CircleButton icon="thumbs-up" size="80" />
+      </Button>
       <CenterButtons />
-    </div>
+    </Container>
   );
 }

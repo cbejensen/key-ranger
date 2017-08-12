@@ -1,34 +1,24 @@
 import React from 'react';
+import glamorous from 'glamorous';
 
 export default function CompareFooter(props) {
-  const styles = {
-    container: {
-      position: 'relative'
+  const Row = glamorous.div({
+    display: 'flex'
+  });
+  const Col = glamorous.div(
+    {
+      flex: '1',
+      padding: '10px'
     },
-    icon: {
-      position: 'absolute',
-      bottom: '0',
-      rightOne: {
-        right: '0'
-      }
-    },
-    center: {
-      textAlign: 'center'
-    }
-  };
+    ({ textAlign = 'center' }) => ({
+      textAlign: textAlign
+    })
+  );
   return (
-    <div style={styles.container}>
-      <div style={styles.icon}>
-        back to menu
-      </div>
-      <div
-        style={{ ...styles.icon, ...styles.icon.rightOne }}
-      >
-        settings
-      </div>
-      <div style={styles.center}>
-        4 / 10
-      </div>
-    </div>
+    <Row>
+      <Col textAlign="left">back</Col>
+      <Col>4/10</Col>
+      <Col textAlign="right">settings</Col>
+    </Row>
   );
 }

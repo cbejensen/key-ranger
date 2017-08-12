@@ -8,12 +8,12 @@ export default function CenterButtons(props) {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    minHeight: 175,
+    minHeight: '200px',
     '& .filler': {
       borderRight: '1px solid white',
-      margin: 7,
+      margin: '7px',
       flex: 1,
-      '@media(max-height: 470px)': {
+      '@media(max-height: 550px)': {
         margin: 0
       }
     },

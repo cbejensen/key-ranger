@@ -1,8 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'normalize.css';
 import App from './App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import keyRangerApp from './reducers.js';
+import 'normalize.css';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let store = createStore(
+  keyRangerApp,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+ReactDOM.render(
+  <Provider store={store}><App /></Provider>,
+  document.getElementById('root')
+);
 registerServiceWorker();

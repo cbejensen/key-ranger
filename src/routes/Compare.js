@@ -1,5 +1,7 @@
 import React from 'react';
-import CompareContainer from '../containers/CompareContainer';
+import KeyBoxesContainer from 'containers/KeyBoxesContainer';
+import TrackButtons from 'components/TrackButtons';
+import CompareFooter from 'components/CompareFooter';
 
 export default function Compare(props) {
   const styles = {
@@ -10,12 +12,21 @@ export default function Compare(props) {
     content: {
       height: '100%',
       maxWidth: '900px',
-      margin: 'auto'
+      margin: 'auto',
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    section: {
+      flex: '1 0 auto'
     }
   };
   return (
     <div style={styles.container}>
-      <CompareContainer style={styles.content} />
+      <div style={styles.content}>
+        <KeyBoxesContainer style={styles.section} />
+        <TrackButtons style={styles.section} />
+        <CompareFooter />
+      </div>
     </div>
   );
 }

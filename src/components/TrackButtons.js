@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import CircleButton from 'components/CircleButton';
 import CenterButtons from 'components/CenterButtons';
 
-export default function TrackButtons(props) {
+export default function KeyButtons(props) {
   const Container = glamorous.div(
     {
       display: 'flex',

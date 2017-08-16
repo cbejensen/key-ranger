@@ -1,8 +1,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import TrackBox from './TrackBox';
+import KeyBox from './KeyBox';
 
-export default function TrackBoxes(props) {
+export default function KeyBoxes(props) {
   const Boxes = glamorous.div(
     {
       display: 'flex'
@@ -15,14 +15,21 @@ export default function TrackBoxes(props) {
   };
   return (
     <Boxes>
-      <TrackBox
+      <KeyBox
+        playing={props.playing}
+        onClick={props.onClick}
         num={1}
         css={{
           ...box,
           borderRight: '1px solid white'
         }}
       />
-      <TrackBox num={2} css={box} />
+      <KeyBox
+        playing={props.playing}
+        onClick={props.onClick}
+        num={2}
+        css={box}
+      />
     </Boxes>
   );
 }

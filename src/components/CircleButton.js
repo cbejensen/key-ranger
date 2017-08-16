@@ -4,7 +4,11 @@ import FontAwesome from 'react-fontawesome';
 
 export default function CircleButton(props) {
   return (
-    <Button dark={props.dark} size={props.size}>
+    <Button
+      onClick={props.onClick}
+      dark={props.dark}
+      size={props.size}
+    >
       <span>
         {props.icon
           ? <FontAwesome

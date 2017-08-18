@@ -7,7 +7,8 @@ export default function Compare(props) {
   const styles = {
     container: {
       background: '#f1635a',
-      height: '100vh'
+      height: '100vh',
+      minHeight: '100vh'
     },
     content: {
       height: '100%',

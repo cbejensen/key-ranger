@@ -3,7 +3,6 @@ import glamorous from 'glamorous';
 import CircleButton from 'components/CircleButton';
 
 export default function KeyBox(props) {
-  console.log(props.playing, props.num);
   const Box = glamorous.div(
     {
       display: 'flex',

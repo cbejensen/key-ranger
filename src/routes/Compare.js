@@ -7,25 +7,24 @@ export default function Compare(props) {
   const styles = {
     container: {
       background: '#f1635a',
-      height: '100vh',
-      minHeight: '100vh'
+      width: '100%'
     },
     content: {
-      height: '100%',
+      minHeight: '100vh',
       maxWidth: '900px',
       margin: 'auto',
       display: 'flex',
       flexDirection: 'column'
     },
-    section: {
-      flex: '1 0 auto'
+    flex: {
+      flex: '1'
     }
   };
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        <KeyBoxesContainer style={styles.section} />
-        <TrackButtons style={styles.section} />
+        <KeyBoxesContainer style={styles.flex} />
+        <TrackButtons style={styles.flex} />
         <CompareFooter />
       </div>
     </div>

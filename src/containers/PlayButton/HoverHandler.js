@@ -5,9 +5,17 @@ import PlayButton from 'components/PlayButton';
 class HoverHandler extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hover: false };
+    this.state = { hover: false, touch: false };
   }
   render() {
+    const handleMouseEnter = () => {
+      // mouseEnter is fired after touchEnd
+      // when touching btn for first time.
+      // we want to ignore this
+      if (!this.state.touch) {
+        this.setState({ hover: true });
+      }
+    };
     const {
       keyPlaying,
       keyNum,
@@ -19,12 +27,15 @@ class HoverHandler extends React.Component {
         keyPlaying={keyPlaying}
         keyNum={keyNum}
         onClick={() => onClick(keyNum)}
-        onMouseEnter={() => this.setState({ hover: true })}
+        // desktop
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={() => this.setState({ hover: false })}
+        // mobile
         onTouchStart={() => this.setState({ hover: true })}
-        onTouchEnd={() => this.setState({ hover: false })}
+        onTouchEnd={() =>
+          this.setState({ hover: false, touch: true })}
         icon={keyPlaying === keyNum ? 'pause' : 'play'}
-        {...this.state}
+        hover={this.state.hover}
         {...props}
       />
     );

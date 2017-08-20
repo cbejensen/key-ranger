@@ -1,13 +1,20 @@
 import glamorous from 'glamorous';
 import CircleButton from 'components/CircleButton';
 
+// here we override the CircleButton styles
+// based on whether the key is playing and/or hovered
 export default glamorous(
   CircleButton
 )(({ keyPlaying, keyNum, hover }) => {
+  // if this key is playing
+  // or if it's being hovered
   if (keyPlaying === keyNum || hover) {
     return {
       backgroundColor: '#ffffff',
       borderColor: '#ffffff',
+      transform: 'scale(1.1)',
+      // we add a hover selector here as well
+      // to
       ':hover': {
         backgroundColor: '#ffffff',
         borderColor: '#ffffff'

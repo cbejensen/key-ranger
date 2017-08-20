@@ -5,7 +5,7 @@ export default function KeySwitcher(props) {
   const switchKey = () => {
     if (!props.keyPlaying || props.keyPlaying === 2) {
       props.onClick(1);
-    } else if (props.keyPlaying === 1) {
+    } else {
       props.onClick(2);
     }
   };

@@ -16,20 +16,13 @@ export default function KeyBoxes(props) {
   return (
     <Boxes>
       <KeyBox
-        playing={props.playing}
-        onClick={props.onClick}
-        num={1}
+        keyNum={1}
         css={{
           ...box,
           borderRight: '1px solid white'
         }}
       />
-      <KeyBox
-        playing={props.playing}
-        onClick={props.onClick}
-        num={2}
-        css={box}
-      />
+      <KeyBox keyNum={2} css={box} />
     </Boxes>
   );
 }

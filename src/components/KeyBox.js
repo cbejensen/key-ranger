@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import CircleButton from 'components/CircleButton';
+import { PlayButton } from 'containers/PlayButton';
 
 export default function KeyBox(props) {
   const Box = glamorous.div(
@@ -16,35 +16,20 @@ export default function KeyBox(props) {
     textTransform: 'uppercase'
   });
   const KeyNumber = glamorous.div({
-    fontSize: '4em',
-    flex: '1'
+    fontSize: '4em'
   });
-  const PlayButton = glamorous(CircleButton)(
-    {
-      flex: '3',
-      display: 'flex',
-      alignItems: 'center'
-    },
-    ({ playing }) => ({
-      background: playing ? '#fffffff' : 'transparent',
-      borderColor: playing ? '#ffffff' : '#292929'
-    })
-  );
+  const ButtonContainer = glamorous.div({
+    flex: '1',
+    display: 'flex',
+    alignItems: 'center'
+  });
   return (
     <Box>
       <Title>Key</Title>
-      <KeyNumber>{props.num}</KeyNumber>
-      <PlayButton
-        onClick={() => {
-          console.log('test');
-          props.onClick(props.num);
-        }}
-        size="lg"
-        dark
-        icon={
-          props.playing === props.num ? 'pause' : 'play'
-        }
-      />
+      <KeyNumber>{props.keyNum}</KeyNumber>
+      <ButtonContainer>
+        <PlayButton size="lg" dark keyNum={props.keyNum} />
+      </ButtonContainer>
     </Box>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import KeyBoxesContainer from 'containers/KeyBoxesContainer';
+import KeyBoxes from 'components/KeyBoxes';
 import TrackButtons from 'components/TrackButtons';
 import CompareFooter from 'components/CompareFooter';
 
@@ -23,7 +23,7 @@ export default function Compare(props) {
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        <KeyBoxesContainer style={styles.flex} />
+        <KeyBoxes style={styles.flex} />
         <TrackButtons style={styles.flex} />
         <CompareFooter />
       </div>

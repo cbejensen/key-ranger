@@ -4,7 +4,6 @@ import CircleButton from 'components/CircleButton';
 export default glamorous(
   CircleButton
 )(({ keyPlaying, keyNum, hover }) => {
-  console.log(keyPlaying, keyNum, hover);
   if (keyPlaying === keyNum || hover) {
     return {
       backgroundColor: '#ffffff',

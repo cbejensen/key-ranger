@@ -1,5 +1,6 @@
 import React from 'react';
 import CircleButton from 'components/CircleButton';
+import KeySwitcher from 'containers/KeySwitcher';
 import glamorous from 'glamorous';
 
 export default function CenterButtons(props) {
@@ -42,9 +43,7 @@ export default function CenterButtons(props) {
   return (
     <Container>
       <div className="filler first" />
-      <CircleButton size="sm">
-        &lt;&gt;
-      </CircleButton>
+      <KeySwitcher />
       <div className="filler" />
       <CircleButton size="md" style={{ fontSize: '2em' }}>
         <EqualsSign size="25px" />

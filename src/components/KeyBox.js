@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { PlayButton } from 'containers/PlayButton';
+import { PlayButton } from 'containers/ConnectKeyPlaying';
 
 export default function KeyBox(props) {
   const Box = glamorous.div(

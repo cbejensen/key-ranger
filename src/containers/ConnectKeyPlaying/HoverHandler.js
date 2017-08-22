@@ -7,15 +7,15 @@ class HoverHandler extends React.Component {
     super(props);
     this.state = { hover: false, touch: false };
   }
+  handleMouseEnter = () => {
+    // mouseEnter is fired after touchEnd
+    // when touching btn for first time.
+    // we want to ignore this
+    if (!this.state.touch) {
+      this.setState({ hover: true });
+    }
+  };
   render() {
-    const handleMouseEnter = () => {
-      // mouseEnter is fired after touchEnd
-      // when touching btn for first time.
-      // we want to ignore this
-      if (!this.state.touch) {
-        this.setState({ hover: true });
-      }
-    };
     const {
       keyPlaying,
       keyNum,
@@ -28,7 +28,7 @@ class HoverHandler extends React.Component {
         keyNum={keyNum}
         onClick={() => onClick(keyNum)}
         // desktop
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={this.handleMouseEnter}
         onMouseLeave={() => this.setState({ hover: false })}
         // mobile
         onTouchStart={() => this.setState({ hover: true })}

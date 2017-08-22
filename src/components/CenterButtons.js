@@ -1,6 +1,6 @@
 import React from 'react';
 import CircleButton from 'components/CircleButton';
-import KeySwitcher from 'containers/KeySwitcher';
+import { KeySwitcher } from 'containers/ConnectKeyPlaying';
 import glamorous from 'glamorous';
 
 export default function CenterButtons(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { playTrack } from 'actions';
-import HoverHandler from './HoverHandler';
+import PlayContainer from './PlayButton';
 import Switcher from 'components/KeySwitcher';
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,5 +21,5 @@ const connectKeyPlaying = connect(
   mapDispatchToProps
 );
 
-export const PlayButton = connectKeyPlaying(HoverHandler);
+export const PlayButton = connectKeyPlaying(PlayContainer);
 export const KeySwitcher = connectKeyPlaying(Switcher);

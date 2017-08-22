@@ -1,8 +1,16 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import PlayButton from 'components/PlayButton';
+import Button from 'components/PlayButton';
 
-class HoverHandler extends React.Component {
+/*
+the purpose of this container
+is to prevent sticky hovering on mobile,
+so that when you pause the key that is playing
+the button will revert back to its normal state
+instead of appearing focused
+*/
+
+class PlayButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hover: false, touch: false };
@@ -23,7 +31,7 @@ class HoverHandler extends React.Component {
       ...props
     } = this.props;
     return (
-      <PlayButton
+      <Button
         keyPlaying={keyPlaying}
         keyNum={keyNum}
         onClick={() => onClick(keyNum)}
@@ -42,4 +50,4 @@ class HoverHandler extends React.Component {
   }
 }
 
-export default HoverHandler;
+export default PlayButton;

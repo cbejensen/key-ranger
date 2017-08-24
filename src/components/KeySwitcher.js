@@ -20,12 +20,9 @@ export default function KeySwitcher(props) {
       return '1em';
     }
   };
-  const Icon = glamorous(FontAwesome)(
-    { color: 'blue' },
-    ({ name }) => ({
-      fontSize: getSize(name)
-    })
-  );
+  const Icon = glamorous(FontAwesome)(({ name }) => ({
+    fontSize: getSize(name)
+  }));
   return (
     <CircleButton size="sm" onClick={switchKey}>
       <Icon name="chevron-left" />

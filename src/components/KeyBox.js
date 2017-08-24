@@ -13,7 +13,9 @@ export default function KeyBox(props) {
   );
   const Title = glamorous.div({
     fontSize: '1.2em',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    padding: '0 10px',
+    borderBottom: '1px solid #292929'
   });
   const KeyNumber = glamorous.div({
     fontSize: '4em'

@@ -18,7 +18,10 @@ class PlayButton extends React.Component {
   handleMouseEnter = () => {
     // mouseEnter is fired after touchEnd
     // when touching btn for first time.
-    // we want to ignore this
+    // we want to ignore this, so if
+    // touchstart is fired, it will set
+    // touch to true, and mouseenter
+    // will not activate hover
     if (!this.state.touch) {
       this.setState({ hover: true });
     }
@@ -39,9 +42,9 @@ class PlayButton extends React.Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={() => this.setState({ hover: false })}
         // mobile
-        onTouchStart={() => this.setState({ hover: true })}
-        onTouchEnd={() =>
-          this.setState({ hover: false, touch: true })}
+        onTouchStart={() =>
+          this.setState({ hover: true, touch: true })}
+        onTouchEnd={() => this.setState({ hover: false })}
         icon={keyPlaying === keyNum ? 'pause' : 'play'}
         hover={this.state.hover}
         {...props}

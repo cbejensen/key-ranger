@@ -19,7 +19,7 @@ export default function App(props) {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={Compare} />
         <Route path="/compare" component={Compare} />
       </div>
     </Router>

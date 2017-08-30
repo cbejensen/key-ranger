@@ -1,5 +1,6 @@
 import React from 'react';
 import CircleButton from 'components/CircleButton';
+import KeySwitcherIcon from './KeySwitcherIcon';
 import FontAwesome from 'react-fontawesome';
 import glamorous from 'glamorous';
 
@@ -11,22 +12,25 @@ export default function KeySwitcher(props) {
       props.onClick(2);
     }
   };
-  const getSize = chevron => {
+  const getSize = direction => {
     if (props.keyPlaying === 1) {
-      return chevron === 'chevron-left' ? '0.7em' : '1.2em';
+      return direction === 'left' ? '0.7em' : '1.2em';
     } else if (props.keyPlaying === 2) {
-      return chevron === 'chevron-left' ? '1.2em' : '0.7em';
+      return direction === 'left' ? '1.2em' : '0.7em';
     } else {
       return '1em';
     }
   };
-  const Icon = glamorous(FontAwesome)(({ name }) => ({
-    fontSize: getSize(name)
-  }));
   return (
     <CircleButton size="sm" onClick={switchKey}>
-      <Icon name="chevron-left" />
-      <Icon name="chevron-right" />
+      <KeySwitcherIcon
+        name="chevron-left"
+        getSize={() => getSize('left')}
+      />
+      <KeySwitcherIcon
+        name="chevron-right"
+        getSize={() => getSize('right')}
+      />
     </CircleButton>
   );
 }

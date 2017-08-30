@@ -2,7 +2,11 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import glamorous from 'glamorous';
 
-const KeySwitcherIcon = glamorous(FontAwesome)(
+const Icon = ({ className, name }) => {
+  return <FontAwesome className={className} name={name} />;
+};
+
+const KeySwitcherIcon = glamorous(Icon)(
   {
     transition: '.3s'
   },

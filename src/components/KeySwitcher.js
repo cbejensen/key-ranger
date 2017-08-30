@@ -1,8 +1,6 @@
 import React from 'react';
 import CircleButton from 'components/CircleButton';
 import KeySwitcherIcon from './KeySwitcherIcon';
-import FontAwesome from 'react-fontawesome';
-import glamorous from 'glamorous';
 
 export default function KeySwitcher(props) {
   const switchKey = () => {

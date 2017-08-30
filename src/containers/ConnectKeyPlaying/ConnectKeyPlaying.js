@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { playTrack } from 'actions';
 import PlayContainer from './PlayButton';

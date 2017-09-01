@@ -2,6 +2,7 @@ import React from 'react';
 import CircleButton from 'components/CircleButton';
 import { KeySwitcher } from 'containers/ConnectKeyPlaying';
 import glamorous from 'glamorous';
+import FontAwesome from 'react-fontawesome';
 
 export default function CenterButtons(props) {
   const Container = glamorous.div({
@@ -45,8 +46,8 @@ export default function CenterButtons(props) {
       <div className="filler first" />
       <KeySwitcher />
       <div className="filler" />
-      <CircleButton size="md" style={{ fontSize: '2em' }}>
-        <EqualsSign size="25px" />
+      <CircleButton size="md">
+        <FontAwesome name="pause" rotate="90" />
       </CircleButton>
       <div className="filler" />
       <CircleButton icon="forward" size="sm" />

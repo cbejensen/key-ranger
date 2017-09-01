@@ -13,8 +13,6 @@ export default glamorous(
       backgroundColor: '#ffffff',
       borderColor: '#ffffff',
       transform: 'scale(1.1)',
-      // we add a hover selector here as well
-      // to
       ':hover': {
         backgroundColor: '#ffffff',
         borderColor: '#ffffff'

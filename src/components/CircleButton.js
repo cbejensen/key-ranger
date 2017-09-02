@@ -8,6 +8,22 @@ const sizes = {
   lg: '100'
 };
 
+const getBackgroundColor = (active, dark) => {
+  if (active) {
+    return dark ? '#ffffff' : '#292929';
+  } else {
+    return 'transparent';
+  }
+};
+
+const getBorderColor = (active, dark) => {
+  if (active) {
+    return dark ? '#ffffff' : '#292929';
+  } else {
+    return dark ? '#292929' : '#ffffff';
+  }
+};
+
 const Button = glamorous.button(
   {
     position: 'relative',
@@ -24,15 +40,16 @@ const Button = glamorous.button(
       outline: '0'
     }
   },
-  ({ size = 'md', dark = false }) => ({
+  ({ size = 'md', active = false, dark = false }) => ({
     width: sizes[size] || size,
     height: sizes[size] || size,
     fontSize: `${(sizes[size] || size) / 2}px`,
     color: dark ? '#292929' : '#ffffff',
-    border: `1px solid ${dark ? '#292929' : '#ffffff'}`,
+    border: `1px solid ${getBorderColor(active, dark)}`,
+    backgroundColor: getBackgroundColor(active, dark),
     '&:hover': {
-      backgroundColor: dark ? '#ffffff' : '#000000',
-      borderColor: dark ? '#ffffff' : '#000000'
+      backgroundColor: getBackgroundColor(true, dark),
+      borderColor: getBorderColor(true, dark)
     }
   })
 );
@@ -48,6 +65,7 @@ export default function CircleButton(props) {
       onTouchEnd={props.onTouchEnd}
       dark={props.dark}
       size={props.size}
+      active={props.active}
     >
       {props.icon
         ? <FontAwesome

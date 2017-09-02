@@ -12,15 +12,19 @@ export default function KeySwitcher(props) {
   };
   const getSize = direction => {
     if (props.keyPlaying === 1) {
-      return direction === 'left' ? '0.7em' : '1.2em';
-    } else if (props.keyPlaying === 2) {
       return direction === 'left' ? '1.2em' : '0.7em';
+    } else if (props.keyPlaying === 2) {
+      return direction === 'left' ? '0.7em' : '1.2em';
     } else {
       return '1em';
     }
   };
   return (
-    <CircleButton size="sm" onClick={switchKey}>
+    <CircleButton
+      size="sm"
+      active={props.keyPlaying}
+      onClick={switchKey}
+    >
       <KeySwitcherIcon
         name="chevron-left"
         getSize={() => getSize('left')}

@@ -28,11 +28,11 @@ export default function CenterButtons(props) {
   });
   const EqualsSign = glamorous.div(
     {
-      borderWidth: '3px 0',
+      borderWidth: '5px 0',
       borderStyle: 'solid',
       borderColor: '#fff'
     },
-    ({ size = '15px' }) => {
+    ({ size = '30px' }) => {
       const val = parseInt(size, 10); // get numbers
       const unit = size.replace(/[0-9]/g, ''); // get letters
       return {
@@ -47,7 +47,7 @@ export default function CenterButtons(props) {
       <KeySwitcher />
       <div className="filler" />
       <CircleButton size="md">
-        <FontAwesome name="pause" rotate="90" />
+        <EqualsSign />
       </CircleButton>
       <div className="filler" />
       <CircleButton icon="forward" size="sm" />

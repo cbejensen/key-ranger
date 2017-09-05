@@ -3,9 +3,9 @@ import { playTrack } from 'actions';
 import PlayContainer from './PlayButton';
 import Switcher from 'components/KeySwitcher';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({ keyPlaying }, ownProps) => {
   return {
-    keyPlaying: state.keyPlaying
+    keyPlaying
   };
 };
 

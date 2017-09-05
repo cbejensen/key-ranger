@@ -26,7 +26,7 @@ export default function KeyBox(props) {
     alignItems: 'center'
   });
   return (
-    <Box>
+    <Box className={props.className}>
       <Title>Key</Title>
       <KeyNumber>{props.keyNum}</KeyNumber>
       <ButtonContainer>

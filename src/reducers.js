@@ -1,4 +1,5 @@
 const initialState = {
+  screen: 'main',
   keyPlaying: 0,
   key1: 'A',
   key2: 'B',
@@ -15,6 +16,11 @@ const keyRangerApp = (state = initialState, action) => {
           : action.key
       };
       break;
+    case 'CHANGE_SCREEN':
+      return {
+        ...state,
+        screen: action.screen
+      };
     default:
       return state;
   }

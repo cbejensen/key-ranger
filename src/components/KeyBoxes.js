@@ -9,20 +9,14 @@ export default function KeyBoxes(props) {
     },
     props.style
   );
-  const box = {
+  const Box = glamorous(KeyBox)({
     paddingTop: '15px',
     flex: '1'
-  };
+  });
   return (
     <Boxes>
-      <KeyBox
-        keyNum={1}
-        css={{
-          ...box,
-          borderRight: '1px solid white'
-        }}
-      />
-      <KeyBox keyNum={2} css={box} />
+      <Box keyNum={1} />
+      <Box keyNum={2} />
     </Boxes>
   );
 }

@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import DividingLine from 'containers/DividingLine';
+import DividingLine from 'components/DividingLine';
 import Loadable from 'react-loadable';
 import Loading from 'components/Loading';
 

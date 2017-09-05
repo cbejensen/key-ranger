@@ -1,7 +1,7 @@
 import React from 'react';
 import KeyBoxes from 'components/KeyBoxes';
 import TrackButtons from 'components/TrackButtons';
-import CompareFooter from 'components/CompareFooter';
+import VoteFooter from 'components/VoteFooter';
 
 export default function Compare(props) {
   const styles = {
@@ -25,7 +25,7 @@ export default function Compare(props) {
       <div style={styles.content}>
         <KeyBoxes style={styles.flex} />
         <TrackButtons style={styles.flex} />
-        <CompareFooter />
+        <VoteFooter />
       </div>
     </div>
   );

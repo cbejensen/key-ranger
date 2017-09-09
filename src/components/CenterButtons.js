@@ -26,21 +26,14 @@ export default function CenterButtons(props) {
       border: 'none'
     }
   });
-  const EqualsSign = glamorous.div(
-    {
-      borderWidth: '5px 0',
-      borderStyle: 'solid',
-      borderColor: '#fff'
-    },
-    ({ size = '30px' }) => {
-      const val = parseInt(size, 10); // get numbers
-      const unit = size.replace(/[0-9]/g, ''); // get letters
-      return {
-        width: `${val}${unit || 'px'}`,
-        height: `${parseInt(val / 3, 10)}${unit || 'px'}`
-      };
-    }
-  );
+  const EqualsSign = glamorous.span({
+    display: 'block',
+    borderWidth: '5px 0',
+    borderStyle: 'solid',
+    borderColor: '#fff',
+    width: '30px',
+    height: '10px'
+  });
   return (
     <Container>
       <div className="filler first" />

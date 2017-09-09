@@ -24,7 +24,7 @@ const getBorderColor = (active, dark) => {
   }
 };
 
-const Button = glamorous.button(
+const Button = glamorous.div(
   {
     position: 'relative',
     display: 'flex',
@@ -43,7 +43,7 @@ const Button = glamorous.button(
   ({ size = 'md', active = false, dark = false }) => ({
     width: sizes[size] || size,
     height: sizes[size] || size,
-    fontSize: `${parseInt(sizes[size] || size) / 2}px`,
+    fontSize: `${parseInt(sizes[size] || size, 10) / 2}px`,
     color: dark ? '#292929' : '#ffffff',
     border: `1px solid ${getBorderColor(active, dark)}`,
     backgroundColor: getBackgroundColor(active, dark),
@@ -66,13 +66,17 @@ export default function CircleButton(props) {
       dark={props.dark}
       size={props.size}
       active={props.active}
+      tabIndex="0"
     >
+      {/* <Centered> */}
       {props.icon
         ? <FontAwesome
+            style={{ display: 'block' }}
             name={props.icon}
             flip={props.flip}
           />
         : props.children}
+      {/* </Centered> */}
     </Button>
   );
 }

@@ -10,12 +10,15 @@ export default function KeyBoxes(props) {
     props.style
   );
   const Box = glamorous(KeyBox)({
-    paddingTop: '15px',
-    flex: '1'
+    flex: '1',
+    position: 'relative'
+  });
+  const BoxWithBorder = glamorous(Box)({
+    borderRight: '1px solid #fff'
   });
   return (
     <Boxes>
-      <Box keyNum={1} />
+      <BoxWithBorder keyNum={1} />
       <Box keyNum={2} />
     </Boxes>
   );

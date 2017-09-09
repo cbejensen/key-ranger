@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import DividingLine from 'components/DividingLine';
 import Loadable from 'react-loadable';
 import Loading from 'components/Loading';
 
@@ -20,7 +19,6 @@ export default function App(props) {
   return (
     <Router>
       <div>
-        <DividingLine />
         <Route exact path="/" component={Main} />
         <Route path="/vote" component={Vote} />
       </div>

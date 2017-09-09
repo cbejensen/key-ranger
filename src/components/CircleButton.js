@@ -3,9 +3,9 @@ import glamorous from 'glamorous';
 import FontAwesome from 'react-fontawesome';
 
 const sizes = {
-  sm: '40',
-  md: '70',
-  lg: '100'
+  sm: '40px',
+  md: '70px',
+  lg: '100px'
 };
 
 const getBackgroundColor = (active, dark) => {
@@ -43,7 +43,7 @@ const Button = glamorous.button(
   ({ size = 'md', active = false, dark = false }) => ({
     width: sizes[size] || size,
     height: sizes[size] || size,
-    fontSize: `${(sizes[size] || size) / 2}px`,
+    fontSize: `${parseInt(sizes[size] || size) / 2}px`,
     color: dark ? '#292929' : '#ffffff',
     border: `1px solid ${getBorderColor(active, dark)}`,
     backgroundColor: getBackgroundColor(active, dark),

@@ -3,7 +3,7 @@ import Button from 'components/PlayButton';
 
 /*
 the purpose of this container
-is to prevent sticky hovering on mobile,
+is to prevent sticky hovering on touchscreens,
 so that when you pause the key that is playing
 the button will revert back to its normal state
 instead of appearing focused

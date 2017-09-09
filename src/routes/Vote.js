@@ -11,7 +11,7 @@ export default function Compare(props) {
     },
     content: {
       minHeight: '100vh',
-      maxWidth: '900px',
+      maxWidth: '750px',
       margin: 'auto',
       display: 'flex',
       flexDirection: 'column'
